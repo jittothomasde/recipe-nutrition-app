@@ -1,0 +1,13 @@
+<h2>Add Ingredient</h2>
+
+<form (ngSubmit)="submit()">
+  <input type="text" [(ngModel)]="name" name="name" placeholder="Name" required>
+  <input type="number" [(ngModel)]="carbs" name="carbs" placeholder="Carbs">
+  <input type="number" [(ngModel)]="fat" name="fat" placeholder="Fat">
+  <input type="number" [(ngModel)]="protein" name="protein" placeholder="Protein">
+  <button type="submit">Submit</button>
+</form>
+
+<div *ngIf="result">
+  <pre>{{ result | json }}</pre>
+</div>

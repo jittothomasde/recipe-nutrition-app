@@ -1,0 +1,39 @@
+/* recipe-list.css */
+
+.saved-recipes {
+  max-width: 700px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+.recipe-card {
+  background-color: #f0f0f5;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.recipe-card:hover {
+  transform: scale(1.01);
+}
+
+.recipe-card h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.recipe-card ul,
+.recipe-card ol {
+  padding-left: 20px;
+}
+
+.recipe-card li {
+  margin-bottom: 4px;
+}
+
+.section-label {
+  font-weight: bold;
+  margin-top: 10px;
+}

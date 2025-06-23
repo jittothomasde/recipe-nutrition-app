@@ -1,0 +1,44 @@
+<div class="container">
+<h2>Recipe Builder</h2>
+
+<label>
+  <strong>Title:</strong>
+  <input type="text" [(ngModel)]="title" />
+</label>
+
+<h3>Ingredients</h3>
+<div *ngFor="let ing of ingredients; let i = index">
+  <input
+    type="text"
+    [(ngModel)]="ingredients[i]"
+    (input)="onIngredientChange(ingredients[i], i)"
+  />
+  <button (click)="removeIngredient(i)">Remove</button>
+
+  <!-- Live nutrition data -->
+  <div *ngIf="ingredientNutrition[i]">
+    <div *ngIf="!ingredientNutrition[i].error">
+      <small>
+        Carbs: {{ ingredientNutrition[i].carbs }},
+        Fat: {{ ingredientNutrition[i].fat }},
+        Protein: {{ ingredientNutrition[i].protein }}
+      </small>
+    </div>
+    <div *ngIf="ingredientNutrition[i].error">
+      <small style="color: red;">Could not fetch nutrition</small>
+    </div>
+  </div>
+</div>
+
+<button (click)="addIngredient()">+ Add Ingredient</button>
+
+<h3>Steps</h3>
+<div *ngFor="let step of steps; let j = index">
+  <textarea [(ngModel)]="steps[j]"></textarea>
+  <button (click)="removeStep(j)">Remove</button>
+</div>
+<button (click)="addStep()">+ Add Step</button>
+
+<br /><br />
+<button (click)="saveRecipe()">💾 Save</button>
+</div>

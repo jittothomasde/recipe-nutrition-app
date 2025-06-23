@@ -1,0 +1,17 @@
+<div class="saved-recipes">
+  <h2>Saved Recipes</h2>
+
+  <div *ngFor="let recipe of recipes" class="recipe-card">
+    <h3>{{ recipe.title }}</h3>
+
+    <div class="section-label">Ingredients:</div>
+    <ul>
+      <li *ngFor="let ing of recipe.ingredients">{{ ing }}</li>
+    </ul>
+
+    <div class="section-label">Steps:</div>
+    <ol>
+      <li *ngFor="let step of recipe.steps">{{ step }}</li>
+    </ol>
+  </div>
+</div>
